@@ -31,6 +31,8 @@ import type {
   Iteration,
   IterationChange,
   Label,
+  EpicWorflow,
+  EpicState,
 } from './types';
 
 const API_BASE_URL: string = 'https://api.clubhouse.io';
@@ -391,6 +393,11 @@ class Client<RequestType, ResponseType> {
   /** */
   deleteIteration(iterationID: ID): Promise<{}> {
     return this.deleteResource(`iterations/${iterationID}`);
+  }
+
+  /** */
+  getEpicWorkflow(): Promise<{}> {
+    return this.getResource(`epic-workflow`);
   }
 }
 

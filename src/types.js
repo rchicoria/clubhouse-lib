@@ -292,6 +292,7 @@ export type Epic = {
   owner_ids: Array<ID>,
   project_ids: Array<ID>,
   stats: any,
+  epic_state_id: number,
 };
 
 export type EpicChange = {
@@ -424,3 +425,26 @@ export type IterationChange = {
   end_date?: string,
   follower_ids?: Array<ID>,
 };
+
+/* EpicWorkflow */
+export type EpicState = {
+  created_at?: string,
+  updated_at?: string,
+  color?: string,
+  description?: string,
+  entity_type?: string,
+  name?: string,
+  id?: ID,
+  position?: number,
+  type?: string,
+  updated_at?: string,
+}
+
+export type EpicWorkflow = {
+  created_at?: string,
+  updated_at?: string,
+  id?: ID,
+  entity_type?: string,
+  default_epic_state_id?: number,
+  epic_states?: Array<EpicState>,
+}
